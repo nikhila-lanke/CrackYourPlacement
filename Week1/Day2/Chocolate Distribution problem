@@ -1,0 +1,13 @@
+class Solution:
+
+    def findMinDiff(self, A,N,M):
+
+        # code here
+        A.sort()
+        i=0; j=M-1
+        mini=float('inf')
+        while j<N:
+            mini=min(mini, A[j]-A[i])
+            j+=1
+            i+=1
+        return mini
