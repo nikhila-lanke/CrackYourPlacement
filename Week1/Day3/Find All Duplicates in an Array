@@ -1,0 +1,9 @@
+import collections
+class Solution:
+    def findDuplicates(self, nums: List[int]) -> List[int]:
+        c=collections.Counter(nums)
+        l=[]
+        for key,val in c.items():
+            if val>1:
+                l.append(key)
+        return l
