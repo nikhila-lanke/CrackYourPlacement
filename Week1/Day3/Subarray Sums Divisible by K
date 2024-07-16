@@ -1,0 +1,13 @@
+class Solution:
+    def subarraysDivByK(self, nums: List[int], k: int) -> int:
+        hm={0:1}
+        ps,ans=0,0
+        for i in range(len(nums)):
+            ps+=nums[i]
+            m=ps%k
+            if m in hm:
+                ans+=hm[m]
+                hm[m]+=1
+            else:
+                hm[m]=1
+        return ans
