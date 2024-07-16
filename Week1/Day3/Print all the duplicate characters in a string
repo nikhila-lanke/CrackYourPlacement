@@ -1,0 +1,12 @@
+s=input()
+hm={}
+for i in s:
+    if i not in hm:
+        hm[i]=1
+    else:
+        hm[i]+=1
+res=[]
+for key, val in hm.items():
+    if val>1:
+        res.append([key,val])
+print(res)
