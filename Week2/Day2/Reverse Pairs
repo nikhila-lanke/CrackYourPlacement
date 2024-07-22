@@ -1,0 +1,10 @@
+from sortedcontainers import SortedList
+class Solution:
+    def reversePairs(self, nums: List[int]) -> int:
+        c=0
+        l=SortedList([2*nums[-1]])
+        for num in nums[-2::-1]:
+            ind=l.bisect_left(num)
+            c+=ind
+            l.add(2*num)
+        return c
